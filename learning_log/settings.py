@@ -128,3 +128,13 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #my settings
 LOGIN_URL = 'users:login'
+STATIC_URL = '/static/'
+STATIC_root = os.path.join(BASE_DIR, 'static')
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # ostali middlewares...
+]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
